@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  S3Bucket:
+    DeletionPolicy: Retain
+    Type: AWS::S3::Bucket
+    Description: Create Amazon S3 bucket using CloudFormation
+    Properties:
+      BucketName: some-bucket-name-2023
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      VersioningConfiguration:
+        Status: Enabled
+Outputs:
+  S3Bucket:
+    Description: S3 bucket created from a CloudFormation template
+    Value: !Ref S3Bucket
