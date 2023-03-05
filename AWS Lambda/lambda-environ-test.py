@@ -28,6 +28,7 @@ def lambda_handler(event, context):
     EncryptionContext={'LambdaFunctionName': os.environ['AWS_LAMBDA_FUNCTION_NAME']}
 )['Plaintext'].decode('utf-8')
     print("Connected to %s as %s with %s" % (DB_HOST, DB_USER, DB_PASS))
+    print(f'DECRYPTED VALUE: {DECRYPTED}')
     return {
         'statusCode': 200,
         'body': json.dumps('Hello from Lambda!')
