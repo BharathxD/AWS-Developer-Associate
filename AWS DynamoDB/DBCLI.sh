@@ -13,3 +13,8 @@ aws dynamodb scan --table-name mystore --max-items 1
 aws dynamodb scan --table-name mystore --projection-expression "created"
 aws dynamodb scan --table-name mystore --projection-expression "category"
 aws dynamodb scan --table-name mystore --projection-expression "colour"
+
+# Use Filter-Expression Parameter:
+aws dynamodb scan --table-name mystore --filter-expression "clientid = :username" --expression-attribute-values '{ ":username": { "S": "chris@example.com" }}'
+aws dynamodb scan --table-name mystore --filter-expression "size = :n" --expression-attribute-values '{ ":n": { "N": "12" }}'
+aws dynamodb scan --table-name mystore --filter-expression "size > :n" --expression-attribute-values '{ ":n": { "N": "12" }}'
