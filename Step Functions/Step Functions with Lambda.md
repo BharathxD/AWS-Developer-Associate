@@ -6,7 +6,7 @@ Create a Lambda function:
 Name = HelloFunction
 Runtime = Node.js 12.x
 Role = Create a new role with basic Lambda permissions
-Note the function ARN: *FUNCTION-ARN*
+Note the function ARN: arn:aws:lambda:ap-south-1:059535961489:function:HelloFunction
 Add the following code and save/deploy:
 
 exports.handler = (event, context, callback) => {
