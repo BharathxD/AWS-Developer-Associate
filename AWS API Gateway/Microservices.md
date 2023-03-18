@@ -145,7 +145,7 @@ In the Method Execution pane, in the Client box, choose Test
 
 In the Method Test pane, keep Query String and Headers empty, and for the request body enter the following JSON and choose "Test":
 
-{
+`{
   "operation": "create",
   "tableName": "lambda-apigateway",
   "payload": {
@@ -154,6 +154,23 @@ In the Method Test pane, keep Query String and Headers empty, and for the reques
       "number": 5
     }
   }
-}
+}`
 
 A 200 indicates a successful operation. Go to DynamoDB to check
+
+You can also update an item:
+
+`{
+    "operation": "update",
+    "tableName": "lambda-apigateway",
+    "payload": {
+        "Key": {
+            "id": "1234ABCD"
+        },
+        "AttributeUpdates": {
+            "number": {
+                "Value": 999
+            }
+        }
+    }
+}`
