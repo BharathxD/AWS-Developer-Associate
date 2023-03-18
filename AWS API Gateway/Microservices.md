@@ -122,3 +122,17 @@ aws lambda invoke --function-name LambdaFunctionOverHttps --payload ./input.txt 
 Create a REST API named DynamoDBOperations
 
 New API with a regional endpoint
+
+## 6 - Create resource and method
+
+Create a resource named DynamoDBManager
+
+Create a POST method for the /dynamodbmanager resource
+
+Use a Lambda integration (non proxy) and enter the function name as LambdaFunctionOverHttps
+
+## 7 - Create a DynamoDB table
+
+Create a table named lambda-apigateway
+
+For the partition key use "id" (string)
