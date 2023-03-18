@@ -32,3 +32,14 @@ Use the following JSON:
     }
   ]
 }
+
+## 2 - Create the execution role
+
+
+Create a role named lambda-apigateway-role
+
+Use case should be Lambda
+
+Attach the lambda-apigateway-policy
+
+
