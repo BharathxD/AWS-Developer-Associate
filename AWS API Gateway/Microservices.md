@@ -100,3 +100,15 @@ exports.handler = function(event, context, callback) {
             callback(`Unknown operation: ${operation}`);
     }
 };`
+
+## 4 - Test the function
+
+Use the following code to test the function:
+
+{
+    "operation": "echo",
+    "payload": {
+        "somekey1": "somevalue1",
+        "somekey2": "somevalue2"
+    }
+}
