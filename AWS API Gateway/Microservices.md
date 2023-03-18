@@ -136,3 +136,24 @@ Use a Lambda integration (non proxy) and enter the function name as LambdaFuncti
 Create a table named lambda-apigateway
 
 For the partition key use "id" (string)
+
+## 8 - Test the configuration
+
+In the REST API go to the /dynamodbmanager resource and choose the POST method
+
+In the Method Execution pane, in the Client box, choose Test
+
+In the Method Test pane, keep Query String and Headers empty, and for the request body enter the following JSON and choose "Test":
+
+{
+  "operation": "create",
+  "tableName": "lambda-apigateway",
+  "payload": {
+    "Item": {
+      "id": "1234ABCD",
+      "number": 5
+    }
+  }
+}
+
+A 200 indicates a successful operation. Go to DynamoDB to check
