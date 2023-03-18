@@ -105,10 +105,20 @@ exports.handler = function(event, context, callback) {
 
 Use the following code to test the function:
 
-{
+`{
     "operation": "echo",
     "payload": {
         "somekey1": "somevalue1",
         "somekey2": "somevalue2"
     }
-}
+}`
+
+Optionally, save in a text file named input.txt and execute the following CLI command:
+
+aws lambda invoke --function-name LambdaFunctionOverHttps --payload ./input.txt outputfile.txt
+
+## 5 - Create REST API
+
+Create a REST API named DynamoDBOperations
+
+New API with a regional endpoint
