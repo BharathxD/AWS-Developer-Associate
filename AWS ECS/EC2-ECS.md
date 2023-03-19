@@ -25,3 +25,15 @@
     #!/bin/bash
     echo ECS_CLUSTER=ECS-Cluster >> /etc/ecs/ecs.config
 ```
+
+## Create a new Task Definintion
+
+- Go to Task Definition in ECS Dashboard
+- Name the task definition as, `NGINX-Definition`
+- For the container details:
+    - Name: `nginx`
+    - Image URI: `nginx:latest`
+- Change the environment to EC2 Instances and Deselect AWS Fargate
+- For vCPU, change it to .25vCPU
+- For Memory to .5 GB
+- Change Network Mode to `awsvpc`
