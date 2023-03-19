@@ -5,3 +5,9 @@
 - Choose Next
 - Add a title to the role `EC2InstanceRole`
 
+## Creating a cluster
+
+- Navigate to ECS Dashboard
+- Go to Cluster, choose `Create Cluster`
+- Give it a name, `ECS-Cluster`
+- In the infrastructure section, choose `External Instances using ECS Anywhere`
