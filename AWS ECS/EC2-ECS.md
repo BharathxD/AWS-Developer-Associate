@@ -45,3 +45,19 @@
 - Select NGINX-Definition as the task definition
 - Click `Deploy`
 
+## Create a New Service in the ECS-Cluster
+
+- Delete the existing task and move to the service tab [It is because we cannot HTTP/SSH into the Task as it doesn't have any Public IP Address assigned]
+- Repeat the same proceedure as for creating a task before
+- Go to Load Balancer, select application load balancer 
+- Name: `ECS-ALB`
+- Target Group: `ECS-TG`
+- Health Check Path: `/`
+- health Check Grace Period: `30`
+
+## Connect to the ECS Service running in the ECS-Cluster
+
+- Go to the EC2 Dashboard
+- Navigate to the Load Balancers
+- Copy the DNS name
+- Now you can connect to the Nginx server Running in the ECS Task
