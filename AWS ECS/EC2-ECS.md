@@ -37,3 +37,11 @@
 - For vCPU, change it to .25vCPU
 - For Memory to .5 GB
 - Change Network Mode to `awsvpc`
+
+## Add a new task to the ECS-Cluster
+
+- Go to `ECS-Cluster`, choose Task and `Run new task`
+- Change the launch type to EC2
+- Select NGINX-Definition as the task definition
+- Click `Deploy`
+
