@@ -11,3 +11,17 @@
 - Go to Cluster, choose `Create Cluster`
 - Give it a name, `ECS-Cluster`
 - In the infrastructure section, choose `External Instances using ECS Anywhere`
+
+## Create an EC-2 Instance with EC2-Optimized AMI
+
+- Create an Instance Named `EC-Instances`
+- Choose this specific AMI Image `ami-040d909ea4356f8f3`
+- Select `t2.micro`
+- Create a new Security Group which allows `SSH`
+- Change instance progile, select `ECSInstanceRole`
+- For the user data, insert the following code: 
+
+```
+    #!/bin/bash
+    echo ECS_CLUSTER=ECS-Cluster >> /etc/ecs/ecs.config
+```
