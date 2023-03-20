@@ -36,4 +36,8 @@
     cd demo-app
 ```
 
+6. Run the init command to start the build
 
+```
+    copilot init --app demo --name api --type 'Load Balanced Web Service' --dockerfile './Dockerfile' --port 80 --deploy
+```
