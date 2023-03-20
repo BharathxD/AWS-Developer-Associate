@@ -28,3 +28,12 @@
 ```
    sudo curl -Lo /usr/local/bin/copilot https://github.com/aws/copilot-cli/releases/latest/download/copilot-linux && sudo chmod +x /usr/local/bin/copilot && copilot --help
 ```
+
+5. Clone the Copilot repository and change into the demo-app directory
+
+```
+    git clone https://github.com/aws-samples/amazon-ecs-cli-sample-app.git demo-app
+    cd demo-app
+```
+
+
