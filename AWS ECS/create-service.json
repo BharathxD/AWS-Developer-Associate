@@ -1,0 +1,24 @@
+{
+  "taskDefinition": "ecs-lab:1",
+  "cluster": "ECS-Lab-Cluster",
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:059535961489:targetgroup/TG-1/31dbb391d45641ab",
+      "containerName": "sample-website",
+      "containerPort": 80
+    }
+  ],
+  "desiredCount": 1,
+  "launchType": "FARGATE",
+  "schedulingStrategy": "REPLICA",
+  "deploymentController": {
+    "type": "CODE_DEPLOY"
+  },
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": ["subnet-04d3a76c637cf5120", "subnet-0290b5aff85f5dc35"],
+      "securityGroups": ["sg-051957464c9d7cb13"],
+      "assignPublicIp": "ENABLED"
+    }
+  }
+}

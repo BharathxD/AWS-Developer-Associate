@@ -49,7 +49,9 @@ Attach role to EC2 instance and then run the following commands (replace account
 
 From a CLI with ECS permissions, change to the directory with the taskdef.json file and run the following commands:
 
+```
 aws ecs register-task-definition --cli-input-json file://taskdef.json
+```
 
 - Create an Application Load Balancer
 - Should be internet facing
@@ -59,3 +61,18 @@ aws ecs register-task-definition --cli-input-json file://taskdef.json
 - Create a new TG - target-group-1, protocol HTTP 80, target type = IP address
 - Creat a second TG - target-group-2, protocol HTTP 8080, target type = IP address
 - For the second listener, forward to target-group-2
+
+- Update security group to allow inbound on 80 and 8080
+
+## Create Fargate Cluster and Service
+
+Create a Fargate cluster named "ecs-cluster"
+From a CLI with ECS permissions, change to the directory with the create-service.json file and run the following commands:
+
+```
+aws ecs create-service --service-name my-service --cli-input-json file://create-service.json
+```
+
+```
+aws ecs describe-services --cluster ecs-cluster --services my-service
+```
