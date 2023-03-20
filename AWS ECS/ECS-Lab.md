@@ -14,3 +14,5 @@ Connect to instance using EC2 Instance Connect
 ```systemctl start docker.service```
 ```docker pull nginx```
 ```docker images```
+
+Create an IAM role and use policy "ecr-allow-all.json" and name it ECRPolicy
