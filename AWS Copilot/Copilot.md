@@ -36,6 +36,8 @@
     cd demo-app
 ```
 
+5.1. EC2 Instance will need to have a Role to be able to perform specific actions
+
 6. Run the init command to start the build
 
 ```
