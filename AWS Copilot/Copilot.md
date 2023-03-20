@@ -41,3 +41,9 @@
 ```
     copilot init --app demo --name api --type 'Load Balanced Web Service' --dockerfile './Dockerfile' --port 80 --deploy
 ```
+
+7. Delete the app by running the following command
+
+```
+copilot app delete
+```
