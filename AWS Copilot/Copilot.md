@@ -13,4 +13,13 @@
     sudo systemctl enable docker.service
     sudo systemctl start docker.service
     sudo usermod -a -G docker ec2-user
+    id ec2-user
+    newgrp docker
 ```
+
+3. Install git
+
+```
+    sudo yum install git
+```
+
