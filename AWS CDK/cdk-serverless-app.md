@@ -51,7 +51,7 @@ from . import widget_service
 8. Replace the first comment in red towards the bottom of the file with this code:
 
 ```python
-        widget_service.WidgetService(self, "Widgets")
+widget_service.WidgetService(self, "Widgets")
 ```
 
 9. Make sure the app still syntehsizes a stack
@@ -70,4 +70,36 @@ cdk deploy
 ```
 
 12. Test the app by running the API execution URL, e.g.https://GUID.execute-api-REGION.amazonaws.com/prod/
+
+# Create Lambda functions to create, show, and delete widgets
+
+1. Replace code in widgets.js in the resources directory with code from widgets-lambda.js
+2. Add the following code at the end of the `my_widget_service/widget_service.py` file
+```python
+        widget = api.root.add_resource("{id}")
+
+        widget_integration = apigateway.LambdaIntegration(handler)
+
+        widget.add_method("POST", widget_integration);   # POST /{id}
+        widget.add_method("GET", widget_integration);    # GET /{id}
+        widget.add_method("DELETE", widget_integration); # DELETE /{id}
+```
+3. Save the file and deploy the app
+
+```
+cdk deploy
+```
+
+# Test creating, showing, and deleting widgets
+
+```
+$ curl -X GET https://GUID.execute-api.REGION.amazonaws.com/prod
+$ curl -X POST https://GUID.execute-api.REGION.amazonaws.com/prod/mywidget
+$ curl -X GET https://GUID.execute-api.REGION.amazonaws.com/prod
+$ curl -X GET https://GUID.execute-api.REGION.amazonaws.com/prod/mywidget
+$ curl -X DELETE https://GUID.execute-api.REGION.amazonaws.com/prod/mywidget
+$ curl -X GET https://GUID.execute-api.REGION.amazonaws.com/prod
+```
+
+- Replace the GUID and REGION in the given URI
 
