@@ -103,3 +103,8 @@ $ curl -X GET https://GUID.execute-api.REGION.amazonaws.com/prod
 
 - Replace the GUID and REGION in the given URI
 
+# Cleanup
+
+```
+cdk destroy
+```
